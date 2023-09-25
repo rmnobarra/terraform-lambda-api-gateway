@@ -53,7 +53,7 @@ resource "aws_lambda_function" "square_hammer" {
   s3_bucket = aws_s3_bucket.lambda_bucket.id
   s3_key    = aws_s3_object.lambda_square_hammer.key
 
-  runtime = "nodejs12.x"
+  runtime = "nodejs14.x"
   handler = "square-hammer.handler"
 
   source_code_hash = data.archive_file.lambda_square_hammer.output_base64sha256
